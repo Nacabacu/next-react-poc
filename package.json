@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "webpack": "webpack --config webpack.client.ts",
-    "webpack:dev": "webpack --config webpack.dev.ts --watch",
+    "webpack:watch": "webpack --config webpack.dev.ts --watch",
+    "webpack:dev": "webpack serve --config webpack.dev.ts",
     "dev": "next dev",
     "build": "npm run webpack && next build",
     "start": "next start",
