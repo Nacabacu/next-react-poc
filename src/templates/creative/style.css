@@ -1,0 +1,14 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+Thai:400,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+Thai:400,300,300italic,400italic,700,700italic');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css');
+@import url('https://assets.sekweb.site/templates/creative/css/styles.css');
+
+:root {
+  --bs-primary: #6f4e37;
+  --bs-link-hover-color: #6f4e37;
+  --bs-primary-rgb: 111, 78, 55;
+  --bs-link-color: #6f4e37;
+  --bs-hover-bg: #5a3e2f;
+  --bs-active-bg: #4e3528;
+}

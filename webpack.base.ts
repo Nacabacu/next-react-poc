@@ -5,7 +5,8 @@ import { Configuration } from 'webpack';
 
 const baseConfig: Configuration = {
   entry: {
-    landingPage: ['./src/templates/index.tsx', './src/shared/globals.css']
+    landingPage: ['./src/templates/index.tsx', './src/shared/globals.css'],
+    creative: ['./src/templates/creative/index.tsx', './src/templates/creative/style.css']
   },
   output: {
     path: path.resolve(__dirname, 'public/templates'),
@@ -49,6 +50,11 @@ const baseConfig: Configuration = {
       template: './src/templates/index.html',
       filename: 'landingPage.html',
       chunks: ['landingPage'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/templates/creative/index.html',
+      filename: 'creative.html',
+      chunks: ['creative'],
     })
   ],
 };
