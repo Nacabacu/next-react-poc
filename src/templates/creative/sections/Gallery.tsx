@@ -4,23 +4,24 @@ interface IGalleryProps {}
 const images = [
   'https://i.pinimg.com/564x/8e/b8/71/8eb871e702b44fa39d4bae621a645672.jpg',
   'https://i.pinimg.com/564x/84/01/07/840107f9a886f48a64cf08ffd6de7802.jpg'
-]
+];
+
+const showImage = (imageUrl: string) => {
+  const imageFullPageRef = document.getElementById('fullpage');
+  if (imageFullPageRef) {
+    imageFullPageRef.style.backgroundImage = `url("${imageUrl}")`;
+    imageFullPageRef.style.display = 'block';
+  }
+};
+
+const hideImage = () => {
+  const imageFullPageRef = document.getElementById('fullpage');
+  if (imageFullPageRef) {
+    imageFullPageRef.style.display = 'none';
+  }
+};
 
 export const Gallery: FC<IGalleryProps> = () => {
-  const showImage = (imageUrl: string) => {
-    const imageFullPageRef = document.getElementById('fullpage');
-    if (imageFullPageRef) {
-      imageFullPageRef.style.backgroundImage = `url("${imageUrl}")`;
-      imageFullPageRef.style.display = 'block';
-    }
-  };
-
-  const hideImage = () => {
-    const imageFullPageRef = document.getElementById('fullpage');
-    if (imageFullPageRef) {
-      imageFullPageRef.style.display = 'none';
-    }
-  };
   return (
     <div id="portfolio">
       <div id="fullpage" onClick={hideImage} />
@@ -42,7 +43,7 @@ export const Gallery: FC<IGalleryProps> = () => {
                     }}
                   />
                   <div className="portfolio-box-caption">
-                    <div className="project-name">Click to Open</div>
+                    <div className="project-name">กดเพื่อแสดงรูป</div>
                   </div>
                 </div>
               </div>

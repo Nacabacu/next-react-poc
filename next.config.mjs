@@ -1,4 +1,17 @@
+import MillionLint from '@million/lint';
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn-icons-png.flaticon.com',
+        port: '',
+        pathname: '**',
+      },
+    ],
+  }
+};
+export default MillionLint.next({
+  rsc: true,
+})(nextConfig);

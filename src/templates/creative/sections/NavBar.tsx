@@ -1,12 +1,16 @@
+import { BusinessData } from '@/types/business';
 import React, { FC } from 'react';
-interface INavBarProps {}
+interface INavBarProps {
+  businessData: BusinessData;
+}
 
-export const NavBar: FC<INavBarProps> = () => {
+export const NavBar: FC<INavBarProps> = (props) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    // Todo: add fixed-top to navbar
+    <nav className="navbar navbar-expand-lg navbar-light py-3 bg-[#6F4E37]">
       <div className="container px-4 px-lg-5">
         <a className="navbar-brand" href="#page-top">
-          Cozy Coffee Shop
+          {props.businessData.shopName}
         </a>
         {/* <img src="coffee-shop-logo.png" alt="" srcset="" width="42" height="42"> */}
         <button
@@ -20,26 +24,26 @@ export const NavBar: FC<INavBarProps> = () => {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="navbarResponsive">
+        <div className="navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ms-auto my-2 my-lg-0">
             <li className="nav-item">
               <a className="nav-link" href="#about">
-                About Us
+                เกี่ยวกับเรา
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#reviewer">
-                Reviews
+                รีวิว
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#portfolio">
-                Gallery
+                รูปภาพ
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#contact">
-                Contact
+                ติดต่อเรา
               </a>
             </li>
           </ul>

@@ -1,10 +1,22 @@
-import { Component } from "../shared/component";
+"use client"
+import BusinessShopForm from '@/app/(components)/BusinessForm/BusinessForm';
+import { BusinessData } from '@/types/business';
+import { ThemeProvider } from "@material-tailwind/react";
+import { useRouter } from 'next/navigation';
+import { useCallback, useState } from 'react';
 
 export default function Home() {
+  const router = useRouter();
+  
+  const onSubmitBusinessData = useCallback((data: BusinessData) => {
+    localStorage.setItem('businessData', JSON.stringify(data));
+    router.push('/preview');
+  }, [router]);
   return (
-    <main>
-      <div className="text-blue-500">Page in next</div>
-      <Component></Component>
-    </main>
+    <ThemeProvider>
+      <main>
+        {<BusinessShopForm onSubmit={onSubmitBusinessData} />}
+      </main>
+    </ThemeProvider>
   );
 }
